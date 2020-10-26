@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <p>{{ this.$st.toFixed(2) }}</p>
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" :key="`sd`" />
   </div>
 </template>
 
@@ -14,5 +15,23 @@ export default defineComponent({
   components: {
     HelloWorld,
   },
+  provide() {
+
+  },
+  data() {
+    return {
+      dataA: 3
+    }
+  },
+  inject: ["injectA1"],
+  methods: {
+    f1() {
+      this.$st.toFixed(2)
+    }
+  },
+  render() {
+    // this.injectA1
+    console.log(this.$st.toFixed(2))
+  }
 });
 </script>

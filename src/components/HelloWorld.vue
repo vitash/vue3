@@ -39,6 +39,7 @@ export default defineComponent({
   name: 'HelloWorld',
   props: {
     msg: String,
+    key: Number,
   },
 });
 </script>
