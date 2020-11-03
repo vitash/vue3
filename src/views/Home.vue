@@ -23,7 +23,7 @@ export default defineComponent({
       dataA: 3
     }
   },
-  inject: ["injectA1"],
+  // inject: ["injectA1"],
   methods: {
     f1() {
       this.$st.toFixed(2)
@@ -32,6 +32,10 @@ export default defineComponent({
   render() {
     // this.injectA1
     console.log(this.$st.toFixed(2))
+  },
+  mounted() {
+    console.log("home");
+    
   }
 });
 </script>

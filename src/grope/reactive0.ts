@@ -1,4 +1,4 @@
-import { reactive, readonly, toRefs, Ref } from "vue"
+import { reactive, readonly, toRefs, Ref, watchEffect } from "vue"
 import { ref } from "vue"
 import { AA } from "./mod1"
 
@@ -39,3 +39,7 @@ const book = reactive({
 })
 
 let { author, title } = toRefs(book)
+
+let w1 = watchEffect(effect => {
+    
+})

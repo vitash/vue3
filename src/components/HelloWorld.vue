@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <p>{{ m1() }}</p>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -37,10 +38,28 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'HelloWorld',
+  setup(p) {
+    return {
+      s1: p.msg
+    }
+  },
   props: {
     msg: String,
     key: Number,
+    key2: { type: Number, required: true },
+    defProp1: () => 11111 as 11111 | 2 | 3 
   },
+  methods: {
+    m1() {
+      console.log(this.$data);
+      
+      // this.defProp1
+    }
+  },
+  mounted() {
+    console.log("hello world");
+    
+  }
 });
 </script>
 
